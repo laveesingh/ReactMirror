@@ -4,53 +4,62 @@ import Grid from 'material-ui/Grid';
 import List, {ListItem, ListItemText, ListItemIcon} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import {DirectionsRun, Mood, VpnLock} from 'material-ui-icons';
+import PropTypes from 'prop-types';
+import {withStyles} from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
 
-export default class MotiveCard extends React.Component{
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit*2,
+    height: '100%',
+  }
+});
+
+class MotiveCard extends React.Component{
 
   render(){
+    const classes = this.props.classes;
     return (
-      <Paper >
-        <Grid container> 
+      <Paper className={classes.paper}>
+        <Grid container className={classes.root}> 
           <Grid item xs={12}>
             <Grid container justify="center">
-              <Grid item key={0}>
-                <h3>Join the community of thriving streamers and broadcasters</h3>
-              </Grid>
+                <Typography type="headline" component="h3">
+                  Join the community of thriving streamers and broadcasters
+                </Typography>
             </Grid>
           </Grid>
           <Grid item xs={12} >
             <Grid container justify="center">
-              <Grid item key={1} >
                 <List>
                   <ListItem>
                     <Avatar>
                       <DirectionsRun />
                     </Avatar>
-                    <ListItemText 
-                      primary="Watch live sports, events and series with your friends and family"
-                      secondary="cool" 
-                    />
+                    <Typography type="body1" component="p">
+                      Watch live sports, events and series with your friends and family
+                    </Typography>
                   </ListItem>
                   <ListItem>
                     <Avatar>
                       <VpnLock />
                     </Avatar>
-                    <ListItemText 
-                      primary="Connect with your audience in a better way"
-                      secondary="cool" 
-                    />
+                    <Typography type="body1" component="p">
+                      Connect with your audience in a better way
+                    </Typography>
                   </ListItem>
                   <ListItem>
                     <Avatar>
                       <Mood />
                     </Avatar>
-                    <ListItemText 
-                      primary="Making reaction videos is now easier and fun"
-                      secondary="cool" 
-                    />
+                    <Typography type="body1" component="p">
+                      Making reaction videos is now easier and fun
+                    </Typography>
                   </ListItem>
                 </List>
-              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -58,3 +67,9 @@ export default class MotiveCard extends React.Component{
     );
   }
 }
+
+MotiveCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(MotiveCard);
