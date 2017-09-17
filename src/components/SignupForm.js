@@ -3,11 +3,15 @@ import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import {FacebookLoginButton, GoogleLoginButton, TwitterLoginButton} from 'react-social-login-buttons';
 
 export default class SignupForm extends React.Component{
   constructor(props){
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleGoogleClick = this.handleGoogleClick.bind(this);
+    this.handleFacebookClick = this.handleFacebookClick.bind(this);
+    this.handleTwitterClick = this.handleTwitterClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       username: "",
@@ -34,6 +38,24 @@ export default class SignupForm extends React.Component{
      */
   }
 
+  handleGoogleClick(event){
+    /* 
+     * This function handles login via google+
+     */
+  }
+
+  handleFacebookClick(event){
+    /* 
+     * This function handles login via facebook
+     */
+  }
+
+  handleTwitterClick(event){
+    /* 
+     * This function handles login via twitter
+     */
+  }
+
   render(){
 
     const styles = {
@@ -47,7 +69,6 @@ export default class SignupForm extends React.Component{
         <Grid container> 
           <Grid item xs={12} >
             <Grid container justify="center">
-              <Grid item key={0} >
                 <form noValidate autoComplete="off" >
                   <TextField 
                     id="username" 
@@ -78,9 +99,15 @@ export default class SignupForm extends React.Component{
                   <Button raised color="primary" onClick={this.handleSubmit}>
                     Submit
                   </Button>
-
+                  <span >Or continue with</span> 
                 </form>
-              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container justify="center">
+            <GoogleLoginButton style={{width: "35px", display:"inline-block"}} onClick={this.handleGoogleClick} />
+            <FacebookLoginButton style={{width: "35px", display:"inline-block"}} onClick={this.handleFacebookClick} />
+            <TwitterLoginButton style={{width: "35px", display:"inline-block"}} onClick={this.handleTwitterClick} />
             </Grid>
           </Grid>
         </Grid>
