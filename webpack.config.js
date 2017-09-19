@@ -1,22 +1,22 @@
-var path = require("path");
-const webpack = require("webpack");
+var path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js'
   },
   watch: true,
   module: {
     loaders: [
-      { 
+      {
         test: /\.css$/,
-        loader: "style-loader" 
+        loader: 'style-loader'
       },
-      { 
+      {
         test: /\.css$/,
-        loader: "css-loader" 
+        loader: 'css-loader'
       },
       {
         test: /\.js$/,
@@ -30,6 +30,6 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './public/',
+    contentBase: './public/'
   }
-};
+}
