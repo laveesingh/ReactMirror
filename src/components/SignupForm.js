@@ -3,58 +3,21 @@ import Grid from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
-import {FacebookLoginButton, GoogleLoginButton, TwitterLoginButton} from 'react-social-login-buttons'
+import { connect } from 'react-redux'
+import {
+  FacebookLoginButton,
+  GoogleLoginButton,
+  TwitterLoginButton
+} from 'react-social-login-buttons'
+import { 
+  signupHandleFormChange,
+  signupHandleFormSubmit,
+  handleGoogleClick,
+  handleFacebookClick,
+  handleTwitterClick
+} from '../actions/signup'
 
-export default class SignupForm extends React.Component {
-  constructor (props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleGoogleClick = this.handleGoogleClick.bind(this)
-    this.handleFacebookClick = this.handleFacebookClick.bind(this)
-    this.handleTwitterClick = this.handleTwitterClick.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.state = {
-      username: '',
-      email: '',
-      password: ''
-    }
-  }
-
-  componentDidMount () {} // is invoked right after component is rendered
-
-  handleChange (event) {
-    // handle changes in signup form fields
-    switch (event.target.id) {
-      case 'username': this.setState({ username: event.target.value }); break
-      case 'email': this.setState({ email: event.target.value }); break
-      default: this.setState({ password: event.target.value })
-    }
-  }
-
-  handleSubmit (event) {
-    /* Steps to write handleSubmit
-     * First import signup endpoint from utils/configs.js
-     * record all data from state and send a post reqeust
-     */
-  }
-
-  handleGoogleClick (event) {
-    /*
-     * This function handles login via google+
-     */
-  }
-
-  handleFacebookClick (event) {
-    /*
-     * This function handles login via facebook
-     */
-  }
-
-  handleTwitterClick (event) {
-    /*
-     * This function handles login via twitter
-     */
-  }
+class SignupForm extends React.Component {
 
   render () {
     const styles = {
@@ -72,8 +35,8 @@ export default class SignupForm extends React.Component {
                 <TextField
                   id='username'
                   label='Username'
-                  value={this.state.username}
-                  onChange={this.handleChange}
+                  value={this.props.username}
+                  onChange={this.props.handleFormChange}
                   margin='normal'
                   autoFocus
                   />
@@ -81,8 +44,8 @@ export default class SignupForm extends React.Component {
                 <TextField
                   id='email'
                   label='Email'
-                  value={this.state.email}
-                  onChange={this.handleChange}
+                  value={this.props.email}
+                  onChange={this.props.handleFormChange}
                   margin='normal'
                   />
                 <br />
@@ -90,14 +53,14 @@ export default class SignupForm extends React.Component {
                   type='password'
                   id='password'
                   label='Password'
-                  value={this.state.password}
-                  onChange={this.handleChange}
+                  value={this.props.password}
+                  onChange={this.props.handleFormChange}
                   margin='normal'
                   />
                 <br />
-                <Button raised color='primary' onClick={this.handleSubmit}>
-                    Submit
-                  </Button>
+                <Button raised color='primary' onClick={this.props.handleFormSubmit}>
+                  Submit
+                </Button>
                 <span >Or continue with</span>
               </form>
             </Grid>
@@ -114,3 +77,22 @@ export default class SignupForm extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    username: state.username,
+    password: state.password,
+    email: state.email
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleFormChange: (event) => dispatch(signupHandleFormChange(event)),
+    handleFormSubmit: (event) => dispatch(signupHandleFormSubmit(event)),
+    handleGoogleClick: (event) => dispatch(handleGoogleClick(event)),
+    handleFacebookClick: (event) => dispatch(handleFacebookClick(event)),
+    handleTwitterClick: (event) => dispatch(handleTwitterClick(event))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)
