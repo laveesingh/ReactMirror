@@ -1,8 +1,8 @@
 /*
- * Components: Navbar(default)
- * States: None required, props will do.
- * Props: props include (but not limited to) four elements that are shown in appbar i.e., brand-logo, search-box, avatar etc.
- * Actions: Currently no action is involved, every action is handled by its own individual component.
+ * Component Name: Navbar(default)
+ * Usage: Inclusion at the top of screens.
+ * States: []
+ * Dispatchable Actions: []
  */
 
 import React from 'react'

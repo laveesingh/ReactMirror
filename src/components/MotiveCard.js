@@ -1,3 +1,10 @@
+/*
+ * Component Name: MotiveCard
+ * Usage: Inclusion in register and login screen.
+ * States: []
+ * Dispatchable Actions: []
+ */
+
 import React from 'react'
 import Paper from 'material-ui/Paper'
 import Grid from 'material-ui/Grid'

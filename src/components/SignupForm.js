@@ -1,3 +1,12 @@
+/*
+ * Component Name: SignupForm
+ * Usage: inclusion into register screen
+ * States: [ username, password, email ]
+ * Dispatchable Actions: [ handleFormChange, handleFormSubmit,
+ *                         handleGoogleClick, handleFacebookClick,
+ *                         handleTwitterClick ]
+*/ 
+
 import React from 'react'
 import Grid from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
