@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SignupForm from './components/SignupForm'
 import MotiveCard from './components/MotiveCard'
 import Register from './components/Register'
+import Login from './components/Login'
 
 class App extends React.Component {
   render () {
@@ -20,6 +21,7 @@ class App extends React.Component {
             <Route path='/demo/signup' component={SignupForm} />
             <Route path='/demo/motivecard' component={MotiveCard} />
             <Route path='/demo/register' component={Register} />
+            <Route path='/demo/login' component={Login} />
           </Switch>
         </BrowserRouter>
       </MuiThemeProvider>
