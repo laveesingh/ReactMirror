@@ -6,7 +6,8 @@ import Button from 'material-ui/Button'
 import { connect } from 'react-redux'
 
 import { 
-  loginHandleFormChange,
+  loginUsernameChange,
+  loginPasswordChange,
   loginHandleFormSubmit,
 } from '../actions/login'
 
@@ -29,7 +30,7 @@ class LoginForm extends React.Component {
                   id='username'
                   label='Username'
                   value={this.props.username}
-                  onChange={this.props.handleFormChange}
+                  onChange={this.props.handleUsernameChange}
                   margin='normal'
                   autoFocus
                   />
@@ -39,7 +40,7 @@ class LoginForm extends React.Component {
                   id='password'
                   label='Password'
                   value={this.props.password}
-                  onChange={this.props.handleFormChange}
+                  onChange={this.props.handlePasswordChange}
                   margin='normal'
                   />
                 <br />
@@ -63,7 +64,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleFormChange: (event) => dispatch(loginHandleFormChange(event)),
+    handleUsernameChange: (event) => dispatch(loginUsernameChange(event.target.value)),
+    handlePasswordChange: (event) => dispatch(loginPasswordChange(event.target.value)),
     handleFormSubmit: (event) => dispatch(loginHandleFormSubmit(event)),
   }
 }

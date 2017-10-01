@@ -27,5 +27,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server -d --config webpack.config.js --content-base public/ --progress --colors"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   }
 }

@@ -4,9 +4,12 @@ import {
   signupPasswordChange,
   signupEmailChange
 } from './signup'
+import { loginUsernameChange, loginPasswordChange } from './login'
 
 export default combineReducers({
   signupUsernameChange,
   signupPasswordChange,
-  signupEmailChange
+  signupEmailChange,
+  loginUsernameChange,
+  loginPasswordChange
 })

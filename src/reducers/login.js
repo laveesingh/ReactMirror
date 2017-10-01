@@ -1,18 +1,18 @@
 
-export function loginUsernameChange(state="", action){
+export function loginUsernameChange(state={username: ""}, action){
   switch(action.type){
     case 'LOGIN_USERNAME_CHANGE':
-      return action.username
-    default:
-      return state
+      return { username: action.username }
+      break
   }
+  return state
 }
 
-export function loginPasswordChange(state="", action){
+export function loginPasswordChange(state={password: ""}, action){
   switch(action.type){
     case 'LOGIN_PASSWORD_CHANGE':
-      return action.password
-    default:
-      return state
+      return { password: action.password }
+      break
   }
+  return state
 }

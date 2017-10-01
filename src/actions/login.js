@@ -1,20 +1,6 @@
-/* 
- * Following function handles changes in login form and 
- * calls the appropriate action-creator depending upon the field changed.
-*/
-
-export function loginHandleFormChange(event){
-  switch(event.target.id){
-    case 'username':
-      return loginUsernameChange(event.target.value)
-    default:
-      return loginPasswordChange(event.target.value)
-  }
-}
-
-/* Following action-creator is triggered by loginHandleFormChange function 
- * when username field is changed in login form
-*/
+/*
+ * Following is action creator for event when username is changed in login form
+ */
 export function loginUsernameChange(username){
   return {
     type: 'LOGIN_USERNAME_CHANGE',
@@ -22,8 +8,8 @@ export function loginUsernameChange(username){
   }
 }
 
-/* Following action-creator is triggered by loginHandleFormChange function 
- * when password field is changed in login form
+/* 
+ * Following is action creator for event when password is changed in login form
 */
 export function loginPasswordChange(password){
   return {
