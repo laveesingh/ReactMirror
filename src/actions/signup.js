@@ -1,21 +1,5 @@
-/* 
- * Following function handles changes in signup form and 
- * calls the appropriate action-creator depending upon the field changed.
-*/
-
-export function signupHandleFormChange(event){
-  switch(event.target.id){
-    case 'username':
-      return signupUsernameChange(event.target.value)
-    case 'email':
-      return signupEmailChange(event.target.value)
-    default:
-      return signupPasswordChange(event.target.value)
-  }
-}
-
-/* Following action-creator is triggered by signupHandleFormChange function 
- * when username field is changed in signup form
+/* Following action-creator is triggered when username 
+ * field is changed in signup form
 */
 export function signupUsernameChange(username){
   return {
@@ -24,8 +8,8 @@ export function signupUsernameChange(username){
   }
 }
 
-/* Following action-creator is triggered by signupHandleFormChange function 
- * when email field is changed in signup form
+/* Following action-creator is triggered when email
+ * field is changed in signup form
 */
 export function signupEmailChange(email){
   return {
@@ -34,8 +18,8 @@ export function signupEmailChange(email){
   }
 }
 
-/* Following action-creator is triggered by signupHandleFormChange function 
- * when password field is changed in signup form
+/* Following action-creator is triggered when password 
+ * field is changed in signup form
 */
 export function signupPasswordChange(password){
   return {

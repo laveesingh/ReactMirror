@@ -19,7 +19,9 @@ import {
   TwitterLoginButton
 } from 'react-social-login-buttons'
 import { 
-  signupHandleFormChange,
+  signupUsernameChange,
+  signupPasswordChange,
+  signupEmailChange,
   signupHandleFormSubmit,
   handleGoogleClick,
   handleFacebookClick,
@@ -34,7 +36,6 @@ class SignupForm extends React.Component {
         padding: '5%'
       }
     }
-
     return (
       <Paper style={styles.signupForm}>
         <Grid container>
@@ -45,7 +46,7 @@ class SignupForm extends React.Component {
                   id='username'
                   label='Username'
                   value={this.props.username}
-                  onChange={this.props.handleFormChange}
+                  onChange={this.props.handleUsernameChange}
                   margin='normal'
                   autoFocus
                   />
@@ -54,7 +55,7 @@ class SignupForm extends React.Component {
                   id='email'
                   label='Email'
                   value={this.props.email}
-                  onChange={this.props.handleFormChange}
+                  onChange={this.props.handleEmailChange}
                   margin='normal'
                   />
                 <br />
@@ -63,13 +64,14 @@ class SignupForm extends React.Component {
                   id='password'
                   label='Password'
                   value={this.props.password}
-                  onChange={this.props.handleFormChange}
+                  onChange={this.props.handlePasswordChange}
                   margin='normal'
                   />
                 <br />
                 <Button raised color='primary' onClick={this.props.handleFormSubmit}>
                   Submit
                 </Button>
+                <button onClick={(event)=>{ event.preventDefault(); console.log("props:", this.props); } }>Know your Props</button>
                 <span >Or continue with</span>
               </form>
             </Grid>
@@ -89,14 +91,16 @@ class SignupForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.username,
-    password: state.password,
-    email: state.email
+    username: state.signupUsernameChange.username,
+    password: state.signupPasswordChange.password,
+    email: state.signupEmailChange.email
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleFormChange: (event) => dispatch(signupHandleFormChange(event)),
+    handleUsernameChange: (event) => dispatch(signupUsernameChange(event.target.value)),
+    handlePasswordChange: (event) => dispatch(signupPasswordChange(event.target.value)),
+    handleEmailChange: (event) => dispatch(signupEmailChange(event.target.value)),
     handleFormSubmit: (event) => dispatch(signupHandleFormSubmit(event)),
     handleGoogleClick: (event) => dispatch(handleGoogleClick(event)),
     handleFacebookClick: (event) => dispatch(handleFacebookClick(event)),

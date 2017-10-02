@@ -58,8 +58,8 @@ class LoginForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.username,
-    password: state.password,
+    username: state.loginUsernameChange.username,
+    password: state.loginPasswordChange.password,
   }
 }
 const mapDispatchToProps = (dispatch) => {
