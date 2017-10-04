@@ -71,7 +71,6 @@ class SignupForm extends React.Component {
                 <Button raised color='primary' onClick={this.props.handleFormSubmit}>
                   Submit
                 </Button>
-                <button onClick={(event)=>{ event.preventDefault(); console.log("props:", this.props); } }>Know your Props</button>
                 <span >Or continue with</span>
               </form>
             </Grid>

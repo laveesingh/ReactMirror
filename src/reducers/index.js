@@ -5,6 +5,7 @@ import {
   signupEmailChange
 } from './signup'
 import { loginUsernameChange, loginPasswordChange } from './login'
+import { navKeywordChange } from './navbar1'
 
 export default combineReducers({
   signupUsernameChange,
