@@ -12,6 +12,7 @@ import MotiveCard from './components/MotiveCard'
 import Register from './components/Register'
 import Login from './components/Login'
 import Navbar1 from './components/Navbar1'
+import Home from './components/Home'
 
 import { routes } from './components/TestHome'
 
@@ -22,6 +23,7 @@ class App extends React.Component {
         <BrowserRouter history={hashHistory}>
           <Switch>
             <Route exact path='/' component={routes} />
+            <Route path='/home' component={Home} />
             <Route path='/demo/signup' component={SignupForm} />
             <Route path='/demo/motivecard' component={MotiveCard} />
             <Route path='/demo/register' component={Register} />
