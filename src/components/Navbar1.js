@@ -1,10 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
-import { Link } from 'react-router-dom'
+import Grid from 'material-ui/Grid'
 
 import { navKeywordChange } from '../actions/navbar1'
 
@@ -19,32 +20,47 @@ class Navbar1 extends React.Component {
   }
 
   render() {
+    const styles = {
+      appBar: {
+        padding: 5
+      },
+      logo: {
+        height: 50,
+        width: 70
+      },
+      login: {
+        textDecoration: 'none'
+      },
+      searchBar: {
+      }
+    }
     return (
-      <AppBar position="static" color="default" style={{ padding: 5 }}>
+      <AppBar position="static" color="default" style={ styles.appBar }>
         <Toolbar>
-          <div id="logo-div" style={{ display: "inline", marginRight: 10 }}>
-            <img src="/logos/vstv-logo-v2.0-dark-icon.png" style={{ height: 75, width: 100 }}/>
-          </div>
-          <div id="search-box" style={{ display: "inline", width: "50%", marginRight: 10 }}>
-            <TextField label="search and watch videos with friends" 
-              placeholder="enter your search terms" value={this.props.keyword}
-              fullWidth={true}
-            />
-          </div>
-          {
-            this.props.isLogged 
-              ? (<h3>Logged in</h3>)  // will be replaced with profile picture most probably
-              : (
-                <div id='login-button' style={{ display: 'inline', align: 'right' }}>
-                  <Link to='/login'>
+          <Grid container spacing={24}>
+            <Grid item md={4}>
+              <img src="/logos/vstv-logo-v2.0-dark-icon.png" style={ styles.logo }/>
+            </Grid>
+            <Grid item md={6}>
+              <TextField label="search and watch videos with friends" 
+                placeholder="enter your search terms" value={this.props.keyword}
+                fullWidth={true} style={ styles.searchBar } 
+              />
+            </Grid>
+            <Grid item md={2}>
+              { 
+                this.props.isLogged 
+                ? ( <h3>Logged In</h3> )
+                : ( 
+                  <Link to='/login' style={ styles.login }>
                     <Button raised color='primary'>
                       Login
                     </Button>
                   </Link>
-                </div>
-              )
-
-          }
+                )
+              }
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     )
