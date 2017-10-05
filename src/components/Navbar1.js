@@ -45,16 +45,16 @@ class Navbar1 extends React.Component {
       <AppBar position="static" color="default" style={ styles.appBar }>
         <Toolbar>
           <Grid container spacing={24}>
-            <Grid item md={4}>
+            <Grid item lg={4} md={4} sm={4} xs={4}>
               <img src="/logos/vstv-logo-v2.0-dark-icon.png" style={ styles.logo }/>
             </Grid>
-            <Grid item md={6}>
+            <Grid item lg={6} md={6} sm={6} xs={6}>
               <TextField label="search and watch videos with friends" 
                 placeholder="enter your search terms" value={this.props.keyword}
                 fullWidth={true} style={ styles.searchBar } 
               />
             </Grid>
-            <Grid item md={2}>
+            <Grid item lg={2} md={2} sm={2} xs={2}>
               { 
                 this.props.isLogged 
                 ? ( <h3>Logged In</h3> )

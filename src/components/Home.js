@@ -4,6 +4,7 @@
 * States: [Currently no states required]
 * Dispatchable Actions: [Currently no actions required]
 */
+
 import React from 'react'
 import {connect} from 'react-redux'
 import Grid from 'material-ui/Grid'
@@ -37,12 +38,12 @@ class Home extends React.Component {
     }
     return (
       <Grid id="page" container style={ styles.page }>
-        <Grid id="navbar" item md={12}>
+        <Grid id="navbar" item lg={12} md={12} sm={12}>
           <Navbar1 />
         </Grid>
-        <Grid item md={12}>
+        <Grid id="page-content" item lg={12} md={12} sm={12}>
           <Grid container spacing={24}>
-            <Grid id="leftbar" item md={2} style={ styles.leftBar }>
+            <Grid id="leftbar" item lg={2} md={2} sm={2} style={ styles.leftBar }>
               <List >
                 <ListItem button>
                   <ListItemText primary="Popular" />
@@ -61,16 +62,16 @@ class Home extends React.Component {
                 </ListItem>
               </List>
             </Grid>
-            <Grid id='lobby' item md={10} style={ styles.lobby }>
+            <Grid id='lobby' item lg={10} md={10} sm={10} style={ styles.lobby }>
               <Grid container>
-                <Grid id='get-started' item md={12} style={ styles.getStarted }>
+                <Grid id='get-started' item lg={12} md={12} sm={12} style={ styles.getStarted }>
                   { getStartedMotive() }
                 </Grid>
-                <Grid id='lobby-content' item md={12}>
+                <Grid id='lobby-content' item lg={12} md={12} sm={12}>
                   <Grid container>
                     { 
                       cardsList.map((cardProps) => (
-                          <Grid item md={3}>
+                          <Grid item lg={3} md={4} sm={6}>
                             { lobbyStreamCard(cardProps) }
                           </Grid>
                         )

@@ -13,19 +13,19 @@ import Grid from 'material-ui/Grid'
 export function getStartedMotive(props){
   return (
     <Grid container>
-      <Grid item md={3}> </Grid>
-      <Grid item md={6}> 
+      <Grid item lg={3} md={1} sm={0}> </Grid>
+      <Grid item lg={6} md={10} sm={12}> 
         <Typography component="h1">
           Best place to hangout with friends
         </Typography>
-        <Typography component="p">
+        <Typography type="body1" component="p">
           Create a lobby to watch videos ranging from live-streams to dead hoofers and shitty-click baits to favorite web-series with a community friends a family.
         </Typography>
         <Button raised color="accent">
           Get Started
         </Button>
       </Grid>
-      <Grid item md={3}> </Grid>
+      <Grid item lg={3} md={1} sm={0}> </Grid>
     </Grid>
   )
 }
