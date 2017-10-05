@@ -1,3 +1,10 @@
+/*
+* Component Name: Stream Cards
+* Usage: This component is not directly usable as any screen, but it defines several kinds of elements like lobbyStreamCard that are reused in HomePage.
+* States: [Currently no states required]
+* Dispatchable Actions: [Currently no actions required]
+*/
+
 import React from 'react'
 import Card, { CardMedia, CardContent, CardActions} from 'material-ui/Card'
 import Button from 'material-ui/Button'

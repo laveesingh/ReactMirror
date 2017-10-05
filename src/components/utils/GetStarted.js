@@ -1,3 +1,10 @@
+/*
+* Component Name: GetStarted
+* Usage: Defines a motive-card that's used in homepage
+* States: [No current states]
+* Dispatchable Actions: [No current states]
+*/
+
 import React from 'react'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'

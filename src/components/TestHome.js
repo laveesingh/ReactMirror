@@ -1,3 +1,10 @@
+/*
+* Component Name: routes
+* Usage: Temporarily provide routing of urls
+* States: [No states required]
+* Dispatchable Actions: [no actions required]
+*/
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 

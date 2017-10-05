@@ -1,3 +1,10 @@
+/*
+* Component Name: App
+* Usage: Represents the entry point for our application, handles all the routes and renders components accordingly
+* States: [No states required]
+* Dispatchable Actions: [No actions required]
+*/
+
 import React from 'react'
 import {
   BrowserRouter,

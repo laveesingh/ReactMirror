@@ -1,3 +1,9 @@
+/*
+* Component Name: Home
+* Usage: Represents the home screen
+* States: [Currently no states required]
+* Dispatchable Actions: [Currently no actions required]
+*/
 import React from 'react'
 import {connect} from 'react-redux'
 import Grid from 'material-ui/Grid'

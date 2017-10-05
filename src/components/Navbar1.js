@@ -1,3 +1,10 @@
+/*
+* Component Name: Navbar1
+* Usage: Represents header navbar used in home screen
+* States: [keyword, isLogged]
+* Dispatchable Actions: [keywordChange]
+*/
+
 import React from 'react'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
