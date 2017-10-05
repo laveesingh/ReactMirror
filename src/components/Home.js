@@ -10,6 +10,7 @@ import {connect} from 'react-redux'
 import Grid from 'material-ui/Grid'
 import List, { ListItem, ListItemText } from 'material-ui/List'
 import Navbar1 from './Navbar1'
+import { footer } from './utils/Footer'
 import { lobbyStreamCard, cardsList } from './utils/StreamCard'
 import { getStartedMotive } from './utils/GetStarted'
 
@@ -34,6 +35,9 @@ class Home extends React.Component {
       },
       getStarted: {
         background: "#d8d8d8"
+      },
+      footer: {
+        background: "#c8c8c8"
       }
     }
     return (
@@ -82,6 +86,9 @@ class Home extends React.Component {
               </Grid>
             </Grid>
           </Grid>
+        </Grid>
+        <Grid id="footer" item lg={12} md={12} sm={12} style={styles.footer}>
+          { footer() }
         </Grid>
       </Grid>
     )
