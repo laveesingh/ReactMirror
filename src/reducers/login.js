@@ -16,3 +16,12 @@ export function loginPasswordChange(state={password: ""}, action){
   }
   return state
 }
+
+export function loginSuccessful(state={username: ""}, action){
+  switch(action.type){
+    case 'LOGIN_SUCCESSFUL':
+      return {username: action.username}
+      break
+  }
+  return state
+}

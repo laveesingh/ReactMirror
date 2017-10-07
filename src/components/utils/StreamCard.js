@@ -10,17 +10,23 @@ import Card, { CardMedia, CardContent, CardActions} from 'material-ui/Card'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 
+16
 export const cardsList = [
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
-  { img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k" },
+  { id: "1", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "2", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "3", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "4", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "5", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "6", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "7", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "8", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "9", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "10", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "11", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Sports Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "sports"},
+  { id: "12", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Simple Stream", user: "Simple Stream User", viewers: "33k", followers: "50k", streamType: "events"},
+  { id: "13", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Featured Stream", user: "Featurd Stream User", viewers: "33k", followers: "50k", streamType: "featured"},
+  { id: "14", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Featured Stream", user: "Featurd Stream User", viewers: "33k", followers: "50k", streamType: "featured"},
+  { id: "15", img_url: "http://img01.ibnlive.in/ibnlive/uploads/2013/04/foot-8-april-1.jpg", title: "Featured Stream", user: "Featurd Stream User", viewers: "33k", followers: "50k", streamType: "featured"},
 ]
 
 

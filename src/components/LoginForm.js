@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { 
   loginUsernameChange,
   loginPasswordChange,
-  loginHandleFormSubmit,
+  loginFormSubmit,
 } from '../actions/login'
 
 class LoginForm extends React.Component {
@@ -44,7 +44,13 @@ class LoginForm extends React.Component {
                   margin='normal'
                   />
                 <br />
-                <Button raised color='primary' onClick={this.props.handleFormSubmit}>
+                <Button raised color='primary' onClick={() => {
+                  this.props.handleFormSubmit({
+                    username: this.props.username,
+                    password: this.props.password
+                  })
+                  }
+                }>
                   Submit
                 </Button>
               </form>
@@ -66,7 +72,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleUsernameChange: (event) => dispatch(loginUsernameChange(event.target.value)),
     handlePasswordChange: (event) => dispatch(loginPasswordChange(event.target.value)),
-    handleFormSubmit: (event) => dispatch(loginHandleFormSubmit(event)),
+    handleFormSubmit: (payload) => loginFormSubmit(payload, dispatch),
   }
 }
 

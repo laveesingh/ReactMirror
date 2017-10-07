@@ -14,6 +14,8 @@ import {
   Switch
 } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { createMuiTheme } from 'material-ui/styles'
+import { purple, green, red } from 'material-ui/colors'
 import SignupForm from './components/SignupForm'
 import MotiveCard from './components/MotiveCard'
 import Register from './components/Register'
@@ -23,10 +25,21 @@ import Home from './components/Home'
 
 import { routes } from './components/TestHome'
 
+const theme = createMuiTheme({
+  palette: {
+    primary: purple,
+    secondary: {
+      ...green,
+      A400: '#00e677'
+    },
+    error: red
+  }
+})
+
 class App extends React.Component {
   render () {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
         <BrowserRouter history={hashHistory}>
           <Switch>
             <Route exact path='/' component={routes} />
@@ -34,7 +47,7 @@ class App extends React.Component {
             <Route path='/demo/signup' component={SignupForm} />
             <Route path='/demo/motivecard' component={MotiveCard} />
             <Route path='/demo/register' component={Register} />
-            <Route path='/demo/login' component={Login} />
+            <Route path='/login' component={Login} />
             <Route path='/demo/navbar1' component={Navbar1} />
           </Switch>
         </BrowserRouter>

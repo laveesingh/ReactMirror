@@ -18,9 +18,14 @@ export function loginPasswordChange(password){
   }
 }
 
-export function loginHandleFormSubmit(event){
-  /* Steps to write handleSubmit
-   * First import login endpoint from utils/configs.js
-   * record all data from state and send a post reqeust
-   */
+export function loginSuccessful(username){
+  return {
+    type: 'LOGIN_SUCCESSFUL',
+    username
+  }
+}
+
+export function loginFormSubmit(payload, dispatch){
+  console.log("Logging in...", payload.username)
+  dispatch(loginSuccessful(payload.username))
 }
