@@ -8,6 +8,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Grid from 'material-ui/Grid'
+import Divider from 'material-ui/Divider'
+import Typography from 'material-ui/Typography'
 import List, { ListItem, ListItemText } from 'material-ui/List'
 import Navbar1 from './Navbar1'
 import { footer } from './utils/Footer'
@@ -52,15 +54,19 @@ class Home extends React.Component {
                 <ListItem button>
                   <ListItemText primary="Popular" />
                 </ListItem>
+                <Divider light />
                 <ListItem button>
                   <ListItemText primary="Live" />
                 </ListItem>
+                <Divider light />
                 <ListItem button>
                   <ListItemText primary="Sports" />
                 </ListItem>
+                <Divider light />
                 <ListItem button>
                   <ListItemText primary="Events" />
                 </ListItem>
+                <Divider light />
                 <ListItem button>
                   <ListItemText primary="Your Subscriptions" />
                 </ListItem>
@@ -71,11 +77,57 @@ class Home extends React.Component {
                 <Grid id='get-started' item lg={12} md={12} sm={12} style={ styles.getStarted }>
                   { getStartedMotive() }
                 </Grid>
-                <Grid id='lobby-content' item lg={12} md={12} sm={12}>
+                <Grid id='lobby-featured' item lg={12} md={12} sm={12}>
                   <Grid container>
+                    <Grid item lg={12} md={12} sm={12}>
+                      <Typography type="headline" component="h1">
+                        Featured Lobbies
+                      </Typography>
+                    </Grid>
                     { 
-                      cardsList.map((cardProps) => (
-                          <Grid item lg={3} md={4} sm={6}>
+                      cardsList.filter(function(card){
+                        return card.streamType === "featured"
+                      }).map((cardProps) => (
+                          <Grid item lg={3} md={4} sm={6} key={cardProps.id}>
+                            { lobbyStreamCard(cardProps) }
+                          </Grid>
+                        )
+                      ) 
+                    }
+
+                  </Grid>
+                </Grid>
+                <Grid id='lobby-sports' item lg={12} md={12} sm={12}>
+                  <Grid container>
+                    <Grid item lg={12} md={12} sm={12}>
+                      <Typography type="headline" component="h1">
+                        Sports
+                      </Typography>
+                    </Grid>
+                    { 
+                      cardsList.filter(function(card){
+                        return card.streamType === "sports"
+                      }).map((cardProps) => (
+                          <Grid item lg={3} md={4} sm={6} key={cardProps.id}>
+                            { lobbyStreamCard(cardProps) }
+                          </Grid>
+                        )
+                      ) 
+                    }
+                  </Grid>
+                </Grid>
+                <Grid id='lobby-events' item lg={12} md={12} sm={12}>
+                  <Grid container>
+                    <Grid item lg={12} md={12} sm={12}>
+                      <Typography type="headline" component="h1">
+                        Events
+                      </Typography>
+                    </Grid>
+                    { 
+                      cardsList.filter(function(card){
+                        return card.streamType === "events"
+                      }).map((cardProps) => (
+                          <Grid item lg={3} md={4} sm={6} key={cardProps.id}>
                             { lobbyStreamCard(cardProps) }
                           </Grid>
                         )
@@ -97,7 +149,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-     currentState: state. currentState,
+     currentState: state.currentState,
   }
 }
 const mapDispatchToProps = (dispatch) => {
