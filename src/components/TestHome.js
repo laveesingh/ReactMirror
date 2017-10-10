@@ -19,6 +19,7 @@ export class routes extends React.Component{
         <Link to='/demo/login' >Login</Link> <br />
         <Link to='/demo/navbar1' >Navbar1</Link> <br />
         <Link to='/home' >Home</Link> <br />
+        <Link to='/profile'>Profile</Link><br />
       </div>
     )
   }
