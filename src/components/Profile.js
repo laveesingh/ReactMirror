@@ -15,7 +15,7 @@ import Tabs, { Tab } from 'material-ui/Tabs'
 import Navbar1 from './Navbar1'
 import { footer } from './utils/Footer'
 import { lobbyStreamCard, cardsList } from './utils/StreamCard'
-import { getStartedMotive } from './utils/GetStarted'
+import CoverCard from './utils/CoverCard'
 
 class Profile extends React.Component {
 
@@ -77,10 +77,7 @@ class Profile extends React.Component {
               <Grid container>
                 <Grid id='cover' item lg={12} md={12} sm={12} style={ styles.cover }>
 
-                THis is for the cover photo<br />
-                THis is for the cover photo<br />
-                THis is for the cover photo<br />
-                THis is for the cover photo<br />
+                  <CoverCard />
 
                 </Grid>
                 <Grid id='stream-following' item lg={12} md={12} sm={12}>

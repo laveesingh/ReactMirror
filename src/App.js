@@ -23,6 +23,7 @@ import Login from './components/Login'
 import Navbar1 from './components/Navbar1'
 import Home from './components/Home'
 import Profile from './components/Profile'
+import CoverCard from './components/utils/CoverCard'
 
 import { routes } from './components/TestHome'
 
@@ -51,6 +52,7 @@ class App extends React.Component {
             <Route path='/login' component={Login} />
             <Route path='/demo/navbar1' component={Navbar1} />
             <Route path='/profile' component={Profile} />
+            <Route path='/cover' component={CoverCard} />
           </Switch>
         </BrowserRouter>
       </MuiThemeProvider>

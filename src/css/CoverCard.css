@@ -1,0 +1,29 @@
+
+.card-div{
+  background-color: yellow;
+  margin: 0;
+  position: relative;
+}
+
+#cover-img{
+  max-width: 100%;
+  min-height: 100%;
+}
+
+#img-div{
+  width: 100%;
+  height: 80%;
+}
+
+#cover-hover{
+  position: absolute;
+  top: 0px;
+}
+
+#cover-hover a{
+  background-color: white;
+}
+
+.cover-avatar{
+  margin: 10px;
+}

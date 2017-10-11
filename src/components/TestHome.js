@@ -7,19 +7,21 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+//import styles from '../css/TestHome.css'
+import '../css/TestHome.css'
 
 export class routes extends React.Component{
   render(){
     return (
-      <div style={{ margin: 20 }}>
+      <div className="root" >
         <h3>Followings are the components that have been made so far!</h3>
-        <Link to="/demo/signup">Signup Form</Link> <br />
-        <Link to='/demo/motivecard' >MotiveCard</Link> <br />
-        <Link to='/demo/register' >Register</Link> <br />
-        <Link to='/demo/login' >Login</Link> <br />
-        <Link to='/demo/navbar1' >Navbar1</Link> <br />
-        <Link to='/home' >Home</Link> <br />
-        <Link to='/profile'>Profile</Link><br />
+        <div className="rootlink" > <Link to="/demo/signup" >Signup Form</Link> </div>
+        <div className="rootlink" > <Link to='/demo/motivecard'  >MotiveCard</Link> </div>
+        <div className="rootlink" > <Link to='/demo/register'  >Register</Link> </div>
+        <div className="rootlink" > <Link to='/login'  >Login</Link> </div>
+        <div className="rootlink" > <Link to='/demo/navbar1'  >Navbar1</Link> </div>
+        <div className="rootlink" > <Link to='/home'  >Home</Link> </div>
+        <div className="rootlink" > <Link to='/profile' >Profile</Link></div>
       </div>
     )
   }
